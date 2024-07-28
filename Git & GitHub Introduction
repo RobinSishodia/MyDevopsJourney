@@ -1,0 +1,188 @@
+Git is a distributed version control system that tracks changes in source code during software development. It allows multiple developers to work on a project simultaneously without overwriting each other's work.
+
+GitHub is a web-based platform that uses Git for version control and provides a collaborative environment for developers to work on projects together.
+
+Key concepts:
+
+Repository: A directory that contains your project's files and the entire revision history.
+Commit: A snapshot of changes made to the repository.
+Branch: A parallel version of the repository that diverges from the main line of development.
+Merge: The process of combining changes from different branches.
+
+Setting Up Git and GitHub
+
+Install Git
+
+Windows: Download the installer from git-scm.comand follow the setup instructions.
+macOS: Use Homebrew: brew install git.
+Linux: Use the package manager: sudo apt-get install git.
+
+Configure Git
+
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+Create a GitHub Account
+
+Sign up for an account at github.com.
+Set Up SSH Key (Optional)
+This step allows you to interact with GitHub securely.
+ssh-keygen -t rsa -b 4096 -C "your.email@example.com"
+Add the generated SSH key to your GitHub account.
+
+Basic Git Commands
+
+Initializing a Repository
+Purpose: Initializes a new Git repository in your project directory.
+Usage: Run this command in the root directory of your project to start versioning your files.
+
+$ git init
+
+Cloning a Repository
+Purpose: Creates a local copy of a remote repository.
+Usage: Use this command to download an existing repository from a URL (e.g., GitHub) to your local machine.
+
+$ git clone <repository-url>
+
+Adding Files
+Purpose: Stages changes for the next commit.
+Usage: git add <file> stages a specific file, while git add . stages all changes in the current directory.
+
+$ git add <file>
+$ git add .
+
+Committing Changes
+Purpose: Records changes to the repository with a descriptive message.
+Usage: After staging changes, use this command to commit them. The message should describe what changes were made.
+
+$ git commit -m "Commit message"
+
+Checking Status
+Purpose: Displays the state of the working directory and the staging area.
+Usage: Use this command to see which changes have been staged, which haven’t, and which files aren’t being tracked by Git.
+
+$ git status
+
+Viewing Commit History
+Purpose: Shows the commit history for the repository.
+Usage: Use this command to view the list of commits made to the repository.
+
+$ git log
+
+Pushing Changes
+Purpose: Uploads local branch commits to the remote repository.
+Usage: Use this command to push your changes to a specific branch on the remote repository.
+
+$ git push origin <branch>
+
+Pulling Changes
+Purpose: Fetches and merges changes from the remote repository to your local branch.
+Usage: Use this command to update your local branch with the latest changes from the remote repository.
+
+$ git pull origin <branch>
+
+Branching and Merging
+Creating a Branch
+Purpose: Creates a new branch.
+Usage: Use this command to create a new branch for developing new features or fixes.
+
+$ git branch <branch-name>
+
+Switching to a Branch (If branch already exists)
+Purpose: Switches to the specified branch.
+Usage: Use this command to change your working directory to the specified branch.
+
+$ git checkout <branch-name>
+
+Creating and Switching to a Branch (If branch doesn't exists)
+Purpose: Creates a new branch and switches to it.
+Usage: Use this command to create and move to a new branch in one step.
+
+$ git checkout -b <branch-name>
+
+Merging Branches
+Purpose: Combines changes from the source branch into the current branch.
+Usage: Use this command after switching to the target branch to merge changes from another branch.
+
+$ git checkout <target-branch>
+$ git merge <source-branch>
+
+Deleting a Branch
+Purpose: Combines changes from the source branch into the current branch.
+Usage: Use this command after switching to the target branch to merge changes from another branch.
+
+$ git branch -d <branch-name>
+
+Collaboration on GitHub
+
+Forking a Repository
+Purpose: Creates a personal copy of someone else's repository on GitHub.
+Usage: Use the "Fork" button on GitHub to create your own copy of the repository.
+How to Fork a Repository?
+Navigate to the repository on GitHub.
+Click the "Fork" button.
+
+Pull Request
+Purpose: Proposes changes you've made to be merged into another repository.
+Usage: Use GitHub's interface to compare your branch and submit a pull request to the original repository.
+
+How to create a pull request?
+Push your changes to your forked repository.
+Go to the original repository on GitHub.
+
+Click "Compare & pull request".
+Add a description and submit the pull request.
+
+Reviewing and Merging Pull Requests
+Go to the "Pull Requests" tab in the repository.
+Review the changes.
+Click "Merge pull request".
+
+Advanced Git Commands
+
+Stashing Changes
+Purpose: Temporarily saves changes that are not ready to be committed.
+Usage: Use this command to save your changes and clean your working directory without committing.
+
+$ git stash
+
+Applying Stashed Changes
+Purpose: Restores the most recently stashed changes.
+Usage: Use this command to apply stashed changes back to your working directory.
+
+$ git stash apply
+
+Viewing Stashes
+Purpose: Lists all stashed changes.
+Usage: Use this command to view the list of stashes you have saved.
+
+$ git stash list
+
+Rebasing Branches
+Purpose: Reapplies commits on top of another base tip.
+Usage: Use this command to move or combine a sequence of commits to a new base commit.
+
+$ git checkout <feature-branch>
+$ git rebase <main-branch>
+
+Cherry-Picking Commits
+Purpose: Applies the changes from a specific commit to the current branch.
+Usage: Use this command to apply changes from one commit to another branch.
+
+$ git cherry-pick <commit-hash>
+
+Resetting to a Previous Commit
+Purpose: Resets the current branch to the specified commit, discarding all changes after that commit.
+Usage: Use this command to revert your branch to a previous state, losing all changes made after the specified commit.
+
+$ git reset --hard <commit-hash>
+
+Best Practices
+
+Commit Often: Make frequent commits with meaningful messages.
+
+Use Branches: Create branches for new features and bug fixes.
+
+Pull Regularly: Regularly pull changes from the main branch to stay up-to-date.
+
+Review Code: Review and test changes before merging pull requests.
